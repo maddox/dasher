@@ -69,19 +69,6 @@ HTTP request you need to make.
 
 You can find more examples in the [example config](/config/config.example.json).
 
-## Protips
-
-Here are few protips about Dash buttons that will help you plan how to use them.
-
-* Dash buttons take about 5 seconds to trigger your action.
-* Dash buttons are discrete buttons. There is no on or off. They just do a
-single command.
-* Dash buttons can not be used for another ~10 seconds after they've been pressed.
-
-Dash buttons should be used to trigger specific things. I.E. a scene in
-your home automation, as a way to turn everything off in your house, or
-as a simple counter.
-
 ## Setup
 
 You'll want to set up your Dash buttons as well as Dasher.
@@ -129,6 +116,20 @@ Listening for Dash buttons requires root. So you need to launch Dasher with sudo
 
     sudo npm run start
     
+## Protips
+
+Here are few protips about Dash buttons that will help you plan how to use them.
+
+* Dash buttons take about 5 seconds to trigger your action.
+* Dash buttons are discrete buttons. There is no on or off. They just do a
+single command.
+* Dash buttons can not be used for another ~10 seconds after they've been pressed.
+
+Dash buttons should be used to trigger specific things. I.E. a scene in
+your home automation, as a way to turn everything off in your house, or
+as a simple counter.
+
+#### Raspberry Pi
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
 ## Contributions
