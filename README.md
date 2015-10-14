@@ -109,7 +109,7 @@ its MAC address you will be able to configure it in Dasher.
 ### Dasher app
 
 
-    git clone git@github.com:maddox/dasher.git
+    git clone git@github.com:maddox/dasher.git (or optionally: git clone https://github.com/maddox/dasher)
     npm install
 
 Then create a `config.json` in `/config` to set up your Dash buttons. Use the
