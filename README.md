@@ -129,7 +129,7 @@ Listening for Dash buttons requires root. So you need to launch Dasher with sudo
 
     sudo npm run start
     
-#### Raspberry Pi
+### Raspberry Pi
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
 ## Contributions
