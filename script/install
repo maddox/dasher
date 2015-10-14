@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+echo "Installing Dasher..."
+
+APP_PATH=`pwd`
+
+sudo mkdir -p /Library/LaunchAgents
+sudo mkdir -p /root/.forever
+
+sudo cp config/org.dasher.plist /Library/LaunchAgents/org.dasher.plist
+
+sudo sed -i '' -e "s#%PATH%#$APP_PATH#g" /Library/LaunchAgents/org.dasher.plist
+
+sudo launchctl load -w -F /Library/LaunchAgents/org.dasher.plist

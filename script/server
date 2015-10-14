@@ -1,0 +1,12 @@
+#!/bin/sh
+
+test -z "$NODE_ENV" &&
+  export NODE_ENV='development'
+
+echo $NODE_ENV
+
+if [ "$NODE_ENV" = "development" ]; then
+  sudo /usr/local/bin/forever -a -w app.js
+else
+  node app.js
+fi

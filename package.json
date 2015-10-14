@@ -1,0 +1,21 @@
+{
+  "name": "dasher",
+  "version": "1.0.0",
+  "description": "A simple way to bridge your Amazon Dash buttons to HTTP services.",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maddox/dasher"
+  },
+  "author": "Jon Maddox <jon@jonmaddox.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maddox/dasher/issues"
+  },
+  "dependencies": {
+    "node-dash-button": "^0.1.1",
+    "request": "^2.60.0"
+  }
+}

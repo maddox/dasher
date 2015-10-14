@@ -1,0 +1,33 @@
+{"buttons":[
+  {
+    "address": "d8:02:dc:98:63:49",
+    "url": "http://192.168.1.55:8123/api/services/scene/turn_on",
+    "method": "POST",
+    "headers": {"authorization": "your_password"},
+    "json": true,
+    "body": {"entity_id": "scene.party_time"}
+  },
+  {
+    "address": "66:a0:dc:98:d2:63",
+    "url": "http://192.168.1.55:8181/playlists/cooking/play",
+    "method": "PUT"
+  },
+  {
+    "address": "63:c9:dc:4a:b1:49",
+    "url": "http://media.local:8888/button_presses/increment",
+    "method": "POST",
+    "body": "button_name=diaper_button"
+  },
+  {
+    "address": "55:a6:dc:4a:53:d4",
+    "url": "https://maker.ifttt.com/trigger/Notify/with/key/4uY5SD3IQcsLKK1xUWbcV",
+    "method": "POST"
+  },
+  {
+    "address": "43:02:dc:b2:ab:23",
+    "url": "https://maker.ifttt.com/trigger/Notify/with/key/4uY5SD3IQcsLKK1xUWbcV",
+    "method": "POST",
+    "json": true,
+    "body": {"value1": "any value", "value2": "another value", "value3": "wow, even more value"}
+  }
+]}

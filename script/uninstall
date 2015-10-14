@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Uninstalling Dasher..."
+forever stop dasher > /dev/null 2>&1
+sudo launchctl unload /Library/LaunchAgents/org.dasher.plist
+sudo rm /Library/LaunchAgents/org.dasher.plist
