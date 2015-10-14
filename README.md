@@ -2,7 +2,7 @@
 
 Dasher is a simple way to bridge your Amazon Dash buttons to HTTP services.
 
-Do you have a Home Automation service set up like Home Assistant, openHab, or
+Do you have a Home Automation service set up like [Home Assistant](https://home-assistant.io), [openHab](http://www.openhab.org), or
 maybe a SmartThings hub? Using Dasher, you can easily command them to do
 something whenever your Dash button is pressed.
 
