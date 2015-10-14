@@ -109,6 +109,7 @@ its MAC address you will be able to configure it in Dasher.
 ### Dasher app
 
 
+    sudo apt-get install libpcap-dev
     git clone git@github.com:maddox/dasher.git (or optionally: git clone https://github.com/maddox/dasher)
     npm install
 
