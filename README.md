@@ -29,7 +29,7 @@ Here's an example.
 ```json
 {"buttons":[
   {
-    "title": "Notify",
+    "name": "Notify",
     "address": "43:02:dc:b2:ab:23",
     "url": "https://maker.ifttt.com/trigger/Notify/with/key/5212ssx2k23k2k",
     "method": "POST",
@@ -37,7 +37,7 @@ Here's an example.
     "body": {"value1": "any value", "value2": "another value", "value3": "wow, even more value"}
   },
   {
-    "title": "Party Time",
+    "name": "Party Time",
     "address": "d8:02:dc:98:63:49",
     "url": "http://192.168.1.55:8123/api/services/scene/turn_on",
     "method": "POST",
@@ -46,7 +46,7 @@ Here's an example.
     "body": {"entity_id": "scene.party_time"}
   },
   {
-    "title": "Start Cooking Playlist",
+    "name": "Start Cooking Playlist",
     "address": "66:a0:dc:98:d2:63",
     "url": "http://192.168.1.55:8181/playlists/cooking/play",
     "method": "PUT"
@@ -56,7 +56,7 @@ Here's an example.
 
 Buttons take up to 7 options.
 
-* `title` - Optionally give the button action a name.
+* `name` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
 * `url` - The URL that will be requested.
 * `method` - The HTTP method of the request.
