@@ -54,7 +54,7 @@ Here's an example.
 ]}
 ```
 
-Buttons take up to 5 options.
+Buttons take up to 7 options.
 
 * `title` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
