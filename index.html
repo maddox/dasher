@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dasher by maddox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Dasher</h1>
+      <h2 class="project-tagline">A simple way to bridge your Amazon Dash buttons to HTTP services</h2>
+      <a href="https://github.com/maddox/dasher" class="btn">View on GitHub</a>
+      <a href="https://github.com/maddox/dasher/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/maddox/dasher/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="dasher" class="anchor" href="#dasher" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dasher</h1>
+
+<p>Dasher is a simple way to bridge your Amazon Dash buttons to HTTP services.</p>
+
+<p>Do you have a Home Automation service set up like <a href="https://home-assistant.io">Home Assistant</a>, <a href="http://www.openhab.org">openHab</a>, or
+maybe a SmartThings hub? Using Dasher, you can easily command them to do
+something whenever your Dash button is pressed.</p>
+
+<p>This of course goes for anything you can reach via HTTP. That includes IFTTT by
+way of the Maker channel <img class="emoji" title=":metal:" alt=":metal:" src="https://assets-cdn.github.com/images/icons/emoji/metal.png" height="20" width="20" align="absmiddle"></p>
+
+<h2>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works</h2>
+
+<p>It's pretty simple. Press a button and an HTTP request is made. That's it.</p>
+
+<p>You configure your Dash button(s) by defining it in a configuration file. Add its network
+address, a url, an http method, and optionally a content body and headers.</p>
+
+<p>When Dasher starts, it will listen for your button being pressed. Once it sees
+it, it will then make the HTTP request that you defined for it in your configuration.</p>
+
+<p>You can learn more about on the <a href="https://github.com/maddox/dasher">GitHub repo</a>.</p>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<p>Here's an example of what it takes to set up your buttons. </p>
+
+<div class="highlight highlight-source-json"><pre>{<span class="pl-s"><span class="pl-pds">"</span>buttons<span class="pl-pds">"</span></span>:[
+  {
+    <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Notify<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>address<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>43:02:dc:b2:ab:23<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://maker.ifttt.com/trigger/Notify/with/key/5212ssx2k23k2k<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>method<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>POST<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>json<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>body<span class="pl-pds">"</span></span>: {<span class="pl-s"><span class="pl-pds">"</span>value1<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>any value<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>value2<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>another value<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>value3<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>wow, even more value<span class="pl-pds">"</span></span>}
+  },
+  {
+    <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Party Time<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>address<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>d8:02:dc:98:63:49<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://192.168.1.55:8123/api/services/scene/turn_on<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>method<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>POST<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>headers<span class="pl-pds">"</span></span>: {<span class="pl-s"><span class="pl-pds">"</span>authorization<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>your_password<span class="pl-pds">"</span></span>},
+    <span class="pl-s"><span class="pl-pds">"</span>json<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>body<span class="pl-pds">"</span></span>: {<span class="pl-s"><span class="pl-pds">"</span>entity_id<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>scene.party_time<span class="pl-pds">"</span></span>}
+  },
+  {
+    <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Start Cooking Playlist<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>address<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>66:a0:dc:98:d2:63<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://192.168.1.55:8181/playlists/cooking/play<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>method<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>PUT<span class="pl-pds">"</span></span>
+  },
+]}</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/maddox/dasher">Dasher</a> is maintained by <a href="https://github.com/maddox">maddox</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
