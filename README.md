@@ -73,7 +73,8 @@ You can find more examples in the [example config](/config/config.example.json).
 
 Here are few protips about Dash buttons that will help you plan how to use them.
 
-* Dash buttons take about 5 seconds to trigger your action.
+* Dash buttons take ~5 seconds to trigger your action.
+* Use DHCP Reservation on your Dash button to lower the latency from ~5s to ~1s.
 * Dash buttons are discrete buttons. There is no on or off. They just do a
 single command.
 * Dash buttons can not be used for another ~10 seconds after they've been pressed.
@@ -128,7 +129,7 @@ example to help you.
 Listening for Dash buttons requires root. So you need to launch Dasher with sudo.
 
     sudo npm run start
-    
+
 ### Raspberry Pi
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
