@@ -132,6 +132,12 @@ Listening for Dash buttons requires root. So you need to launch Dasher with sudo
 
     sudo npm run start
 
+### Auto Start on OS X
+
+After setting it up with `script/bootstrap` just run `script/install` to load Dasher with `launchd`. Dasher will now start on boot.
+
+You can uninstall it with `script/uninstall` and restart it with `script/restart`.
+
 ### Raspberry Pi
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
