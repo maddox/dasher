@@ -13,4 +13,4 @@ sudo cp config/org.dasher.plist /Library/LaunchDaemons/org.dasher.plist
 
 sudo sed -i '' -e "s#%PATH%#$APP_PATH#g" /Library/LaunchDaemons/org.dasher.plist
 
-sudo launchctl load -w -F /Library/LaunchDaemons/org.dasher.plist
+sudo launchctl bootstrap system /Library/LaunchDaemons/org.dasher.plist
