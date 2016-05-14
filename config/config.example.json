@@ -5,7 +5,7 @@
     "interface": "en0",
     "url": "http://192.168.1.55:8123/api/services/scene/turn_on",
     "method": "POST",
-    "headers": {"authorization": "your_password"},
+    "headers": {"x-ha-access": "your_password"},
     "json": true,
     "body": {"entity_id": "scene.party_time"}
   },
