@@ -2,7 +2,8 @@ FROM node
 
 RUN apt-get update && \
     apt-get install -y \
-    libpcap-dev
+    libpcap-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
