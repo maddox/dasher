@@ -119,7 +119,7 @@ Simply clone and install the dependencies.
 
 Set up Dasher.
 
-    git clone git@github.com:maddox/dasher.git
+    git clone https://github.com/maddox/dasher.git
     cd dasher
     npm install
 
