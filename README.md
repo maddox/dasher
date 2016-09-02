@@ -113,9 +113,10 @@ its MAC address you will be able to configure it in Dasher.
 
 Simply clone and install the dependencies.
 
-**note:** You might need to install `libpcap-dev` on Linux first.
+**note:** You might need to install `libpcap-dev` or `npm` on Linux first.
 
     $ sudo apt-get install libpcap-dev
+    $ sudo apt-get install npm
 
 Set up Dasher.
 
