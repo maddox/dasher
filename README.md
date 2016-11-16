@@ -61,7 +61,7 @@ Buttons take up to 7 options.
 * `name` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
-* `timeoute` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
+* `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
 * `url` - The URL that will be requested.
 * `method` - The HTTP method of the request.
 * `headers` - Optional headers to use in the request.
