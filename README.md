@@ -32,7 +32,7 @@ Here's an example.
     "name": "Notify",
     "address": "43:02:dc:b2:ab:23",
     "interface": "en0",
-    "timeout": "60000"
+    "timeout": "60000",
     "url": "https://maker.ifttt.com/trigger/Notify/with/key/5212ssx2k23k2k",
     "method": "POST",
     "json": true,
