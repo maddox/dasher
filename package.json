@@ -15,7 +15,7 @@
     "url": "https://github.com/maddox/dasher/issues"
   },
   "dependencies": {
-    "node-dash-button": "^0.3.0",
+    "node-dash-button": "^0.6.1",
     "request": "^2.60.0"
   }
 }
