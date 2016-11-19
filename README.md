@@ -67,8 +67,8 @@ Buttons take up to 7 options.
 * `name` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
-* `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
-* `protocol` - Optionally set the protocol for your Dash button. Options are udp and arp. Default/null listens to both protocols. The "newer" JK29LP button from ~Q2 2016+ tends to use udp. 
+* `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds. Default is 5000.
+* `protocol` - Optionally set the protocol for your Dash button. Options are udp, arp, and all. Default listens to arp. The "newer" JK29LP button from ~Q2 2016+ tends to use udp. 
 * `url` - The URL that will be requested.
 * `method` - The HTTP method of the request.
 * `headers` - Optional headers to use in the request.
