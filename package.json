@@ -1,6 +1,6 @@
 {
   "name": "dasher",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A simple way to bridge your Amazon Dash buttons to HTTP services.",
   "scripts": {
     "start": "node app.js"
