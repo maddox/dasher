@@ -53,6 +53,11 @@ Here's an example.
     "url": "http://192.168.1.55:8181/playlists/cooking/play",
     "method": "PUT"
   },
+  {
+    "name": "Debug Dash Button",
+    "address": "41:02:dc:b2:az:23",
+	"debug": true
+  }  
 ]}
 ```
 
@@ -62,11 +67,13 @@ Buttons take up to 7 options.
 * `address` - The MAC address of the button.
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
 * `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
+* `protocol` - Optionally set the time protocol for your Dash button. Options are udp and arp. Default listens to both protocols. The "newer ~(2016)" JK29LP tends to use udp. 
 * `url` - The URL that will be requested.
 * `method` - The HTTP method of the request.
 * `headers` - Optional headers to use in the request.
 * `json` - Optionally declare the content body as being JSON in the request.
 * `body` - Optionally provide a content-body that will be sent with the request.
+* `debug` - Used for testing button presses and will -not- perform a request.
 
 Setting and using these values should be enough to cover almost every kind of
 HTTP request you need to make.
@@ -82,6 +89,7 @@ Here are few protips about Dash buttons that will help you plan how to use them.
 * Dash buttons are discrete buttons. There is no on or off. They just do a
 single command.
 * Dash buttons can not be used for another ~10 seconds after they've been pressed.
+* If your Dash button is using udp, specify it in the button config.
 
 Dash buttons should be used to trigger specific things. I.E. a scene in
 your home automation, as a way to turn everything off in your house, or
@@ -109,7 +117,7 @@ MAC address. Run this:
 
 You will be prompted for your password, and then it will listen for your Dash
 button. Click your button and look for the MAC address reported. Once you have
-its MAC address you will be able to configure it in Dasher.
+its MAC address you will be able to configure it in Dasher by modifying `config.json` in `/config`. 
 
 ### Dasher app
 
@@ -127,7 +135,7 @@ Set up Dasher.
     npm install
 
 Then create a `config.json` in `/config` to set up your Dash buttons. Use the
-example to help you.
+example to help you. If you just want to test out the button press, use the debug button example.
 
 
 ## Running It

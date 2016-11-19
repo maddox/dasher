@@ -1,9 +1,15 @@
 {"buttons":[
   {
+    "name": "Debug Dash Button",
+    "address": "d8:02:dc:98:63:49",
+	"debug": true
+  },
+  {
     "name": "Start Party Time",
     "address": "d8:02:dc:98:63:49",
     "interface": "en0",
     "timeout": "60000",
+    "protocol": "udp",	
     "url": "http://192.168.1.55:8123/api/services/scene/turn_on",
     "method": "POST",
     "headers": {"x-ha-access": "your_password"},
@@ -13,6 +19,7 @@
   {
     "name": "Start Cooking Playlist",
     "address": "66:a0:dc:98:d2:63",
+    "protocol": "arp",	
     "url": "http://192.168.1.55:8181/playlists/cooking/play",
     "method": "PUT"
   },
