@@ -116,7 +116,7 @@ MAC address. Run this:
 
     script/find_button
 
-Click your button the script will listen for your device. Look for the MAC address reported by watching for your button. Dash buttons should appear as manufactured by 'Amazon Technologies Inc.'. Once you have
+Click your Dash button and the script will listen for your device. Dash buttons should appear as manufactured by 'Amazon Technologies Inc.'. Once you have
 its MAC address you will be able to configure it in Dasher by modifying `config.json` in `/config` after installing Dasher.
 
 ### Dasher app
