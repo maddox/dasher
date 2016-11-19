@@ -33,6 +33,7 @@ Here's an example.
     "address": "43:02:dc:b2:ab:23",
     "interface": "en0",
     "timeout": "60000",
+    "protocol": "udp",
     "url": "https://maker.ifttt.com/trigger/Notify/with/key/5212ssx2k23k2k",
     "method": "POST",
     "json": true,
@@ -56,7 +57,7 @@ Here's an example.
   {
     "name": "Debug Dash Button",
     "address": "41:02:dc:b2:az:23",
-	"debug": true
+    "debug": true
   }  
 ]}
 ```
@@ -67,7 +68,7 @@ Buttons take up to 7 options.
 * `address` - The MAC address of the button.
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
 * `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
-* `protocol` - Optionally set the time protocol for your Dash button. Options are udp and arp. Default listens to both protocols. The "newer ~(2016)" JK29LP tends to use udp. 
+* `protocol` - Optionally set the protocol for your Dash button. Options are udp and arp. Default/null listens to both protocols. The "newer" JK29LP button from ~Q2 2016+ tends to use udp. 
 * `url` - The URL that will be requested.
 * `method` - The HTTP method of the request.
 * `headers` - Optional headers to use in the request.
@@ -115,9 +116,8 @@ MAC address. Run this:
 
     script/find_button
 
-You will be prompted for your password, and then it will listen for your Dash
-button. Click your button and look for the MAC address reported. Once you have
-its MAC address you will be able to configure it in Dasher by modifying `config.json` in `/config`. 
+Click your button the script will listen for your device. Look for the MAC address reported by watching for your button. Dash buttons should appear as manufactured by 'Amazon Technologies Inc.'. Once you have
+its MAC address you will be able to configure it in Dasher by modifying `config.json` in `/config` after installing Dasher.
 
 ### Dasher app
 
