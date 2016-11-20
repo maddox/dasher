@@ -164,8 +164,9 @@ Having problems running npm install?  Replace nodejs-legacy with node and manual
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
     sudo dpkg -i node_latest_armhf.deb
 
-Quick Start
-Starting from a fresh Raspberry Pi Build? Updated (11/20/16)
+Quick Start Updated (11/20/16)
+
+Starting from a fresh Raspberry Pi Build? 
 
     sudo apt-get install libpcap-dev
     sudo apt-get install npm
@@ -174,7 +175,7 @@ Starting from a fresh Raspberry Pi Build? Updated (11/20/16)
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
     sudo dpkg -i node_latest_armhf.deb
 
-    git clone https://github.com/maddows/dasher.git
+    git clone https://github.com/mmaddox/dasher.git
     cd dasher
     sudo npm install
 
