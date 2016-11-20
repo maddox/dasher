@@ -125,8 +125,15 @@ Simply clone and install the dependencies.
 
 **note:** You might need to install `libpcap-dev` or `npm` on Linux first.
 
-    $ sudo apt-get install libpcap-dev
-    $ sudo apt-get install npm
+    sudo apt-get install libpcap-dev
+    sudo apt-get install npm
+
+**note** Raspberry Pi users may need to update node which will automatically remove nodejs-legacy. One you are on node mainline, force the update to the latest version of node for arm. This may not be needed if you are running a first generation pi. If you are on a Pi and run into problems with npm install, try this. Credit @legotheboss
+
+    sudo apt-get install node
+
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
+    sudo dpkg -i node_latest_armhf.deb
 
 Set up Dasher.
 
@@ -135,7 +142,7 @@ Set up Dasher.
     npm install
 
 Then create a `config.json` in `/config` to set up your Dash buttons. Use the
-example to help you. If you just want to test out the button press, use the debug button example.
+example to help you. If you just want to test the button press, use the debug button example with the MAC address you found running script/find_button. 
 
 
 ## Running It
@@ -151,6 +158,30 @@ After setting it up with `script/bootstrap` just run `script/install` to load Da
 You can uninstall it with `script/uninstall` and restart it with `script/restart`.
 
 ### Raspberry Pi
+Having problems running npm install?  Replace nodejs-legacy with node and manually update to the latest version of node arm.
+
+    sudo apt-get install node
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
+    sudo dpkg -i node_latest_armhf.deb
+
+Quick Start
+Starting from a fresh Raspberry Pi Build? Updated (11/20/16)
+
+    sudo apt-get install libpcap-dev
+    sudo apt-get install npm
+
+    sudo apt-get install node
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
+    sudo dpkg -i node_latest_armhf.deb
+
+    git clone https://github.com/maddows/dasher.git
+    cd dasher
+    sudo npm install
+
+    sudo ./script/findbutton
+    update /config/config.json
+    sudo npm run start
+
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
 ## Contributions
