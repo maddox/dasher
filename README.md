@@ -121,21 +121,21 @@ its MAC address you will be able to configure it in Dasher by modifying `config.
 
 ### Dasher app
 
-Simply clone and install the dependencies.
+Simply **install the dependencies** and **clone the repository**.
 
 **note:** You might need to install `libpcap-dev` or `npm` on Linux first.
 
     sudo apt-get install libpcap-dev
     sudo apt-get install npm
 
-**note** Raspberry Pi users may need to update node which will automatically remove nodejs-legacy. One you are on node mainline, force the update to the latest version of node for arm. This may not be needed if you are running a first generation pi. If you are on a Pi and run into problems with npm install, try this. Credit @legotheboss
+**note** Raspberry Pi users may need to update node arm which will automatically remove nodejs-legacy. Credit @legotheboss
 
     sudo apt-get install node
 
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
     sudo dpkg -i node_latest_armhf.deb
 
-Set up Dasher.
+**Clone and Set up Dasher**
 
     git clone https://github.com/maddox/dasher.git
     cd dasher
@@ -158,13 +158,17 @@ After setting it up with `script/bootstrap` just run `script/install` to load Da
 You can uninstall it with `script/uninstall` and restart it with `script/restart`.
 
 ### Raspberry Pi
-Having problems running npm install?  Replace nodejs-legacy with node and manually update to the latest version of node arm.
+**Having problems running npm install?**
+
+Raspberry Pi users may need to update node arm which will automatically remove nodejs-legacy. One you are on node mainline, force the update to the latest version of node for arm. This may not be needed if you are running a first generation pi. If you are on a Pi and run into problems with npm install, try this. Credit @legotheboss
+
+Replace nodejs-legacy with node and manually update to the latest version of node arm.
 
     sudo apt-get install node
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
     sudo dpkg -i node_latest_armhf.deb
 
-Quick Start Updated (11/20/16)
+**Quick Start** Updated (11/20/16)
 
 Starting from a fresh Raspberry Pi Build? 
 
@@ -175,13 +179,15 @@ Starting from a fresh Raspberry Pi Build?
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
     sudo dpkg -i node_latest_armhf.deb
 
-    git clone https://github.com/mmaddox/dasher.git
+    git clone https://github.com/maddox/dasher.git
     cd dasher
     sudo npm install
 
     sudo ./script/findbutton
     update /config/config.json
     sudo npm run start
+
+**Auto Starting**
 
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
