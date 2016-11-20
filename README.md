@@ -91,6 +91,7 @@ Here are few protips about Dash buttons that will help you plan how to use them.
 single command.
 * Dash buttons can not be used for another ~10 seconds after they've been pressed.
 * If your Dash button is using udp, specify it in the button config.
+* Listening over wifi is unreliable. I highly recommend using ethernet, especially  on Raspberry Pi
 
 Dash buttons should be used to trigger specific things. I.E. a scene in
 your home automation, as a way to turn everything off in your house, or
@@ -117,7 +118,7 @@ MAC address. Run this:
     script/find_button
 
 Click your Dash button and the script will listen for your device. Dash buttons should appear as manufactured by 'Amazon Technologies Inc.'. Once you have
-its MAC address you will be able to configure it in Dasher by modifying `config.json` in `/config` after installing Dasher.
+its MAC address you will be able to configure it in Dasher by modifying `config/config.json` after installing Dasher.
 
 ### Dasher app
 
