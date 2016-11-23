@@ -106,6 +106,10 @@ Once your Dash button is set up and on your network, you need to determine its
 MAC address. Run this:
 
     script/find_button
+    
+If your network is super chatty like mine (thanks SamsungTV), you can filter the output by running this:
+
+    script/find_button | grep 'Amazon'
 
 You will be prompted for your password, and then it will listen for your Dash
 button. Click your button and look for the MAC address reported. Once you have
