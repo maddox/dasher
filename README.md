@@ -45,7 +45,11 @@ Here's an example.
     "method": "POST",
     "headers": {"authorization": "your_password"},
     "json": true,
-    "body": {"entity_id": "scene.party_time"}
+    "body": {"entity_id": "scene.party_time"},
+    "formData": {
+      "var1":"val1",
+      "var2":" val2"
+    }
   },
   {
     "name": "Start Cooking Playlist",
@@ -67,6 +71,7 @@ Buttons take up to 7 options.
 * `headers` - Optional headers to use in the request.
 * `json` - Optionally declare the content body as being JSON in the request.
 * `body` - Optionally provide a content-body that will be sent with the request.
+* `formData` - optionally add formData that will be sent with the request.
 
 Setting and using these values should be enough to cover almost every kind of
 HTTP request you need to make.
