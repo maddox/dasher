@@ -32,6 +32,7 @@ Here's an example.
     "name": "Notify",
     "address": "43:02:dc:b2:ab:23",
     "interface": "en0",
+    "timeout": "60000",
     "url": "https://maker.ifttt.com/trigger/Notify/with/key/5212ssx2k23k2k",
     "method": "POST",
     "json": true,
@@ -44,7 +45,11 @@ Here's an example.
     "method": "POST",
     "headers": {"authorization": "your_password"},
     "json": true,
-    "body": {"entity_id": "scene.party_time"}
+    "body": {"entity_id": "scene.party_time"},
+    "formData": {
+      "var1":"val1",
+      "var2":" val2"
+    }
   },
   {
     "name": "Start Cooking Playlist",
@@ -60,11 +65,13 @@ Buttons take up to 7 options.
 * `name` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
+* `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
 * `url` - The URL that will be requested.
 * `method` - The HTTP method of the request.
 * `headers` - Optional headers to use in the request.
 * `json` - Optionally declare the content body as being JSON in the request.
 * `body` - Optionally provide a content-body that will be sent with the request.
+* `formData` - optionally add formData that will be sent with the request.
 
 Setting and using these values should be enough to cover almost every kind of
 HTTP request you need to make.
@@ -113,13 +120,15 @@ its MAC address you will be able to configure it in Dasher.
 
 Simply clone and install the dependencies.
 
-**note:** You might need to install `libpcap-dev` on Linux first.
+**note:** You might need to install `libpcap-dev` or `npm` on Linux first.
 
     $ sudo apt-get install libpcap-dev
+    $ sudo apt-get install npm
 
 Set up Dasher.
 
-    git clone git@github.com:maddox/dasher.git
+    git clone https://github.com/maddox/dasher.git
+    cd dasher
     npm install
 
 Then create a `config.json` in `/config` to set up your Dash buttons. Use the

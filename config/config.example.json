@@ -3,6 +3,7 @@
     "name": "Start Party Time",
     "address": "d8:02:dc:98:63:49",
     "interface": "en0",
+    "timeout": "60000",
     "url": "http://192.168.1.55:8123/api/services/scene/turn_on",
     "method": "POST",
     "headers": {"x-ha-access": "your_password"},
@@ -19,7 +20,11 @@
     "address": "63:c9:dc:4a:b1:49",
     "url": "http://media.local:8888/button_presses/increment",
     "method": "POST",
-    "body": "button_name=diaper_button"
+    "body": "button_name=diaper_button",
+    "formData": {
+      "var1":"val1",
+      "var2":" val2"
+    }
   },
   {
     "address": "55:a6:dc:4a:53:d4",
