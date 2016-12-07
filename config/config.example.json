@@ -11,6 +11,18 @@
     "body": {"entity_id": "scene.party_time"}
   },
   {
+    "name": "Start Party Time from anywhere",
+    "address": "d8:02:dc:98:63:49",
+    "interface": "en0",
+    "timeout": "60000",
+    "url": "https://home.example.com/api/services/scene/turn_on",
+    "insecure": true,
+    "method": "POST",
+    "headers": {"x-ha-access": "your_password"},
+    "json": true,
+    "body": {"entity_id": "scene.party_time"}
+  },
+  {
     "name": "Start Cooking Playlist",
     "address": "66:a0:dc:98:d2:63",
     "url": "http://192.168.1.55:8181/playlists/cooking/play",

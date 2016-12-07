@@ -52,11 +52,23 @@ Here's an example.
     }
   },
   {
+    "name": "Start Party Time from anywhere",
+    "address": "d8:02:dc:98:63:49",
+    "interface": "en0",
+    "timeout": "60000",
+    "url": "https://home.example.com/api/services/scene/turn_on",
+    "insecure": true,
+    "method": "POST",
+    "headers": {"x-ha-access": "your_password"},
+    "json": true,
+    "body": {"entity_id": "scene.party_time"}
+  },
+  {
     "name": "Start Cooking Playlist",
     "address": "66:a0:dc:98:d2:63",
     "url": "http://192.168.1.55:8181/playlists/cooking/play",
     "method": "PUT"
-  },
+  }
 ]}
 ```
 
@@ -67,6 +79,7 @@ Buttons take up to 7 options.
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
 * `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
 * `url` - The URL that will be requested.
+* `insecure` - Optionally skip SSL certificate verification. Default is `false`.
 * `method` - The HTTP method of the request.
 * `headers` - Optional headers to use in the request.
 * `json` - Optionally declare the content body as being JSON in the request.
