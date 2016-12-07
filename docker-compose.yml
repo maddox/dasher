@@ -3,7 +3,6 @@ services:
   dasher:
     build: .
     network_mode: host
-    privileged: true
     restart: always
     volumes:
       - ~/configs/dasher:/usr/src/app/config
