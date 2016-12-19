@@ -7,3 +7,4 @@ services:
     volumes:
       - ./config:/usr/src/app/config 
     network_mode: "host"
+    restart: always
