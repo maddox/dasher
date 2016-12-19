@@ -143,7 +143,7 @@ Then create a `config.json` in `/config` to set up your Dash buttons. Use the
 example to help you.
 
 
-## Running It
+## Running it locally
 
 Listening for Dash buttons requires root. So you need to launch Dasher with sudo.
 
@@ -157,6 +157,16 @@ You can uninstall it with `script/uninstall` and restart it with `script/restart
 
 ### Raspberry Pi
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
+
+## Running it via Docker
+If you want to run the image via docker, you can certainly do so via 
+following single command:
+
+    docker-compose up
+
+or to run in backgroupnd
+
+    docker-compose up -d
 
 ## Contributions
 

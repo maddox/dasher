@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  docker-web-app:
+    build: .
+    container_name: nodejs-dasher
+    volumes:
+      - ./config:/usr/src/app/config 
+    network_mode: "host"
