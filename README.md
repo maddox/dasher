@@ -124,6 +124,11 @@ You will be prompted for your password, and then it will listen for your Dash
 button. Click your button and look for the MAC address reported. Once you have
 its MAC address you will be able to configure it in Dasher.
 
+When running in Docker, just use following command out of this project's
+directory:
+
+  docker-compose exec dasher node node_modules/node-dash-button/bin/findbutton | grep Amazon
+
 ### Dasher app
 
 Simply clone and install the dependencies.
