@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  dasher:
+    build: .
+    container_name: dasher
+    volumes:
+      - ./config:/usr/src/app/config 
+    network_mode: "host"
+    restart: always
+    

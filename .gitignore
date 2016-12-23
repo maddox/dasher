@@ -2,3 +2,4 @@ node_modules
 config/config.json
 *.log
 .DS_Store
+._.DS_Store

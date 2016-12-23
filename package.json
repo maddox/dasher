@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "node-dash-button": "^0.6.1",
-    "request": "^2.60.0"
+    "request": "^2.60.0",
+    "wake_on_lan": "^0.0.4"
   }
 }

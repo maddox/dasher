@@ -3,11 +3,12 @@
 Dasher is a simple way to bridge your Amazon Dash buttons to HTTP services.
 
 Do you have a Home Automation service set up like [Home Assistant](https://home-assistant.io), [openHab](http://www.openhab.org), or
-maybe a SmartThings hub? Using Dasher, you can easily command them to do
+maybe a SmartThings hub? Or do you simply want a convenient way to wake devices local to your
+network (like a NAS that's serving media)? Using Dasher, you can easily command them to do
 something whenever your Dash button is pressed.
 
-This of course goes for anything you can reach via HTTP. That includes IFTTT by
-way of the Maker channel :metal:
+This of course goes for anything you can reach via HTTP (and wake on LAN via magic packets). 
+That includes IFTTT by way of the Maker channel :metal:
 
 ## How it works
 
@@ -17,7 +18,8 @@ You configure your Dash button(s) via `config/config.json`. You add its network
 address, a url, an http method, and optionally a content body and headers.
 
 When Dasher starts, it will listen for your button being pressed. Once it sees
-it, it will then make the HTTP request that you defined for it in your config.
+it, it will then make the HTTP request (or send the magic packet) that you defined 
+for it in your config.
 
 ## Configuration
 
@@ -52,6 +54,11 @@ Here's an example.
     }
   },
   {
+    "name": "Wake my Plex-Server",
+    "address": "50:f5:da:cc:dd:ee",
+    "targetMac": "aa:bb:cc:dd:ee:ff"
+  },
+  {
     "name": "Start Cooking Playlist",
     "address": "66:a0:dc:98:d2:63",
     "url": "http://192.168.1.55:8181/playlists/cooking/play",
@@ -64,6 +71,7 @@ Buttons take up to 7 options.
 
 * `name` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
+* `targetMac` - The MAC address of the device to wake up (will ignore subsequent configuration).
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
 * `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
 * `url` - The URL that will be requested.
@@ -116,6 +124,11 @@ You will be prompted for your password, and then it will listen for your Dash
 button. Click your button and look for the MAC address reported. Once you have
 its MAC address you will be able to configure it in Dasher.
 
+When running in Docker, just use following command out of this project's
+directory:
+
+  docker-compose exec dasher node node_modules/node-dash-button/bin/findbutton | grep Amazon
+
 ### Dasher app
 
 Simply clone and install the dependencies.
@@ -135,7 +148,7 @@ Then create a `config.json` in `/config` to set up your Dash buttons. Use the
 example to help you.
 
 
-## Running It
+## Running it locally
 
 Listening for Dash buttons requires root. So you need to launch Dasher with sudo.
 
@@ -149,6 +162,16 @@ You can uninstall it with `script/uninstall` and restart it with `script/restart
 
 ### Raspberry Pi
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
+
+## Running it via Docker
+If you want to run the image via docker, you can certainly do so via 
+following single command:
+
+    docker-compose up
+
+or to run in backgroupnd
+
+    docker-compose up -d
 
 ## Contributions
 
