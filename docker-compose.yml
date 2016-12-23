@@ -1,10 +1,11 @@
 version: "2"
 
 services:
-  docker-web-app:
+  dasher:
     build: .
-    container_name: nodejs-dasher
+    container_name: dasher
     volumes:
       - ./config:/usr/src/app/config 
     network_mode: "host"
     restart: always
+    
