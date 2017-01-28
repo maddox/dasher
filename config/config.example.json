@@ -27,7 +27,11 @@
     "address": "63:c9:dc:4a:b1:49",
     "url": "http://media.local:8888/button_presses/increment",
     "method": "POST",
-    "body": "button_name=diaper_button"
+    "body": "button_name=diaper_button",
+    "formData": {
+      "var1":"val1",
+      "var2":" val2"
+    }
   },
   {
     "address": "55:a6:dc:4a:53:d4",
