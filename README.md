@@ -174,7 +174,7 @@ Replace nodejs-legacy with node and manually update to the latest version of nod
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
     sudo dpkg -i node_latest_armhf.deb
 
-**Quick Start** Updated (11/20/16)
+**Quick Start** Works as of (1/27/17)
 
 Starting from a fresh Raspberry Pi Build? 
 
