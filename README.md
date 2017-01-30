@@ -33,6 +33,7 @@ Here's an example.
     "address": "43:02:dc:b2:ab:23",
     "interface": "en0",
     "timeout": "60000",
+    "protocol": "udp",
     "url": "https://maker.ifttt.com/trigger/Notify/with/key/5212ssx2k23k2k",
     "method": "POST",
     "json": true,
@@ -57,6 +58,11 @@ Here's an example.
     "url": "http://192.168.1.55:8181/playlists/cooking/play",
     "method": "PUT"
   },
+  {
+    "name": "Debug Dash Button",
+    "address": "41:02:dc:b2:az:23",
+    "debug": true
+  }  
 ]}
 ```
 
@@ -65,13 +71,15 @@ Buttons take up to 7 options.
 * `name` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
 * `interface` - Optionally listen for the button on a specific network interface. (`enX` on OS X and `ethX` on Linux)
-* `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds
+* `timeout` - Optionally set the time required between button press detections (if multiple pressese are detected) in milliseconds. Default is 5000.
+* `protocol` - Optionally set the protocol for your Dash button. Options are udp, arp, and all. Default listens to arp. The "newer" JK29LP button from ~Q2 2016+ tends to use udp. 
 * `url` - The URL that will be requested.
 * `method` - The HTTP method of the request.
 * `headers` - Optional headers to use in the request.
 * `json` - Optionally declare the content body as being JSON in the request.
 * `body` - Optionally provide a content-body that will be sent with the request.
 * `formData` - optionally add formData that will be sent with the request.
+* `debug` - Used for testing button presses and will -not- perform a request.
 
 Setting and using these values should be enough to cover almost every kind of
 HTTP request you need to make.
@@ -87,6 +95,8 @@ Here are few protips about Dash buttons that will help you plan how to use them.
 * Dash buttons are discrete buttons. There is no on or off. They just do a
 single command.
 * Dash buttons can not be used for another ~10 seconds after they've been pressed.
+* If your Dash button is using udp, specify it in the button config.
+* Listening over wifi is unreliable. I highly recommend using ethernet, especially  on Raspberry Pi
 
 Dash buttons should be used to trigger specific things. I.E. a scene in
 your home automation, as a way to turn everything off in your house, or
@@ -112,27 +122,33 @@ MAC address. Run this:
 
     script/find_button
 
-You will be prompted for your password, and then it will listen for your Dash
-button. Click your button and look for the MAC address reported. Once you have
-its MAC address you will be able to configure it in Dasher.
+Click your Dash button and the script will listen for your device. Dash buttons should appear as manufactured by 'Amazon Technologies Inc.'. Once you have
+its MAC address you will be able to configure it in Dasher by modifying `config/config.json` after installing Dasher.
 
 ### Dasher app
 
-Simply clone and install the dependencies.
+Simply **install the dependencies** and **clone the repository**.
 
 **note:** You might need to install `libpcap-dev` or `npm` on Linux first.
 
-    $ sudo apt-get install libpcap-dev
-    $ sudo apt-get install npm
+    sudo apt-get install libpcap-dev
+    sudo apt-get install npm
 
-Set up Dasher.
+**note** Raspberry Pi users may need to update node arm which will automatically remove nodejs-legacy. Credit @legotheboss
+
+    sudo apt-get install node
+
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
+    sudo dpkg -i node_latest_armhf.deb
+
+**Clone and Set up Dasher**
 
     git clone https://github.com/maddox/dasher.git
     cd dasher
     npm install
 
 Then create a `config.json` in `/config` to set up your Dash buttons. Use the
-example to help you.
+example to help you. If you just want to test the button press, use the debug button example with the MAC address you found running script/find_button. 
 
 
 ## Running It
@@ -148,6 +164,37 @@ After setting it up with `script/bootstrap` just run `script/install` to load Da
 You can uninstall it with `script/uninstall` and restart it with `script/restart`.
 
 ### Raspberry Pi
+**Having problems running npm install?**
+
+Raspberry Pi users may need to update node arm which will automatically remove nodejs-legacy. One you are on node mainline, force the update to the latest version of node for arm. This may not be needed if you are running a first generation pi. If you are on a Pi and run into problems with npm install, try this. Credit @legotheboss
+
+Replace nodejs-legacy with node and manually update to the latest version of node arm.
+
+    sudo apt-get install node
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
+    sudo dpkg -i node_latest_armhf.deb
+
+**Quick Start** Works as of (1/27/17)
+
+Starting from a fresh Raspberry Pi Build? 
+
+    sudo apt-get install libpcap-dev
+    sudo apt-get install npm
+
+    sudo apt-get install node
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
+    sudo dpkg -i node_latest_armhf.deb
+
+    git clone https://github.com/maddox/dasher.git
+    cd dasher
+    sudo npm install
+
+    sudo ./script/findbutton
+    update /config/config.json
+    sudo npm run start
+
+**Auto Starting**
+
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
 ## Contributions
