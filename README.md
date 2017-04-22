@@ -189,8 +189,8 @@ Starting from a fresh Raspberry Pi Build?
     cd dasher
     sudo npm install
 
-    sudo ./script/findbutton
-    update /config/config.json
+    sudo ./script/find_button
+    # update /config/config.json with mac address of your button 
     sudo npm run start
 
 **Auto Starting**
