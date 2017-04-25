@@ -44,5 +44,9 @@
     "method": "POST",
     "json": true,
     "body": {"value1": "any value", "value2": "another value", "value3": "wow, even more value"}
+  },
+  {
+    "address": "63:c9:dc:4a:de:02",
+    "cmd": "/home/user/dash_button.sh"
   }
 ]}
