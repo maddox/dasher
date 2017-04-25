@@ -46,7 +46,8 @@
     "body": {"value1": "any value", "value2": "another value", "value3": "wow, even more value"}
   },
   {
-    "address": "63:c9:dc:4a:de:02",
+    "name": "Command Exec Button",
+    "address": "41:02:dc:b2:10:12",
     "cmd": "/home/user/dash_button.sh"
   }
 ]}

@@ -11,13 +11,16 @@ way of the Maker channel :metal:
 
 ## How it works
 
-It's pretty simple. Press a button and an HTTP request is made. That's it.
+It's pretty simple. Press a button and an HTTP request is made or local command
+is ran. That's it.
 
 You configure your Dash button(s) via `config/config.json`. You add its network
-address, a url, an http method, and optionally a content body and headers.
+address and either a url, an http method, and optionally a content body and
+headers or a local command to execute.
 
 When Dasher starts, it will listen for your button being pressed. Once it sees
-it, it will then make the HTTP request that you defined for it in your config.
+it, it will then make the HTTP request or run the command that you defined for
+it in your config.
 
 ## Configuration
 
@@ -60,13 +63,18 @@ Here's an example.
   },
   {
     "name": "Debug Dash Button",
-    "address": "41:02:dc:b2:az:23",
+    "address": "41:02:dc:b2:ab:23",
     "debug": true
+  },
+  {
+    "name": "Command Exec Button",
+    "address": "41:02:dc:b2:10:12",
+    "cmd": "/home/user/dash_button.sh"
   }  
 ]}
 ```
 
-Buttons take up to 7 options.
+Buttons take up to 8 options.
 
 * `name` - Optionally give the button action a name.
 * `address` - The MAC address of the button.
@@ -78,11 +86,13 @@ Buttons take up to 7 options.
 * `headers` - Optional headers to use in the request.
 * `json` - Optionally declare the content body as being JSON in the request.
 * `body` - Optionally provide a content-body that will be sent with the request.
-* `formData` - optionally add formData that will be sent with the request.
+* `formData` - Optionally add formData that will be sent with the request.
 * `debug` - Used for testing button presses and will -not- perform a request.
+* `cmd` - Used to run a local command rather than an HTTP request. Setting this
+will override the url parameter.
 
 Setting and using these values should be enough to cover almost every kind of
-HTTP request you need to make.
+request you need to make.
 
 You can find more examples in the [example config](/config/config.example.json).
 
