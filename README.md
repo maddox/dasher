@@ -128,7 +128,10 @@ The button will be set up and available on your network.
 #### Find Dash Button
 
 Once your Dash button is set up and on your network, you need to determine its
-MAC address. Run this:
+MAC address. You will need to install dependencies to run the following, so be
+sure to read the below section to install libpcap-dev and nodejs first. 
+
+Run this:
 
     script/find_button
 
