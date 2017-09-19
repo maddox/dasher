@@ -216,6 +216,7 @@ You can run dasher inside a docker container:
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
 
 **Auto Starting using Docker with systemd**
+
 Create a new service by creating a new file /etc/systemd/system/dasher.service
 
     [Unit]
