@@ -203,9 +203,43 @@ Starting from a fresh Raspberry Pi Build?
     # update /config/config.json with mac address of your button 
     sudo npm run start
 
+#### Docker
+You can run dasher inside a docker container:
+
+    # pull the image
+    docker pull nesurion/dasher
+    # start the container
+    docker run --rm --name dasher --volume <path to your config folder here>:/root/dasher/config --net host nesurion/dasher
+
 **Auto Starting**
 
 Advanced information on autostarting Dasher on your Raspberry Pi can be found [here](https://github.com/maddox/dasher/wiki/Running-Dasher-on-a-Raspberry-Pi-at-startup).     
+
+**Auto Starting using Docker with systemd**
+Create a new service by creating a new file /etc/systemd/system/dasher.service
+
+    [Unit]
+    Description=Dasher
+    After=docker.service
+    Requires=docker.service
+    
+    [Service]
+    ExecStartPre=-/usr/bin/docker stop dasher
+    ExecStartPre=-/usr/bin/docker rm dasher
+    After=docker.service
+    ExecStartPre=-/usr/bin/docker pull nesuion/dasher
+    ExecStart=/usr/bin/docker run --rm --name dasher --volume /home/pi/dasher/config:/root/dasher/config --net host dasher
+    ExecStop=/usr/bin/docker stop dasher
+    Restart=on-failure
+    RestartSec=10
+    
+    [Install]
+    WantedBy=multi-user.target
+
+Add the new service to systemd:
+
+    sudo systemctl enable dasher.service
+
 
 ## Contributions
 
