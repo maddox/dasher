@@ -1,5 +1,12 @@
 # Dasher!!
 
+## :warning: Dasher is sunsetted :warning:
+This project is no longer under active development. I neither use it, nor do I use Amazon Dash buttons in my home automation. I found their latency and general way of working to not be a great solution as a smart button for my household. 
+
+[Nekmo/amazon-dash](https://github.com/Nekmo/amazon-dash) is a great alternative. It has support for all kinds of actions and is actively developed. It's way better than mine!    
+
+## What it is
+
 Dasher is a simple way to bridge your Amazon Dash buttons to HTTP services.
 
 Do you have a Home Automation service set up like [Home Assistant](https://home-assistant.io), [openHab](http://www.openhab.org), or
