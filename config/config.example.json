@@ -49,5 +49,14 @@
     "name": "Command Exec Button",
     "address": "41:02:dc:b2:10:12",
     "cmd": "/home/user/dash_button.sh"
+  },
+  {
+    "name": "WOL Button",
+    "address": "41:02:dc:b2:10:1f",
+    "cmd": "etherwake",
+    "args": [
+      "AA:AA:AA:BB:BB:BB",
+      "CC:CC:CC:DD:DD:DD"
+    ]
   }
 ]}
