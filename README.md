@@ -138,6 +138,10 @@ Once your Dash button is set up and on your network, you need to determine its
 MAC address. Run this:
 
     script/find_button
+    
+If your network is super chatty like mine (thanks SamsungTV), you can filter the output by running this:
+
+    script/find_button | grep 'Amazon'
 
 Click your Dash button and the script will listen for your device. Dash buttons should appear as manufactured by 'Amazon Technologies Inc.'. Once you have
 its MAC address you will be able to configure it in Dasher by modifying `config/config.json` after installing Dasher.
